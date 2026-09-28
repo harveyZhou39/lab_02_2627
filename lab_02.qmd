@@ -211,7 +211,7 @@ vectorCheck <- function(vect) {
 }
 ```
 
-- [ ] In a new chunk, write a function called `make_square` that, given an integer, will print a square of full stops with side length that integer. Here are some examples:
+- [X] In a new chunk, write a function called `make_square` that, given an integer, will print a square of full stops with side length that integer. Here are some examples:
 
 ```{r}
 make_square <- function(n) {
