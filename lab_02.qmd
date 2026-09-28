@@ -155,6 +155,7 @@ students <- data.frame(
     name = c("Ada", "Alan", "Grace", "Edsger", "Katherine"),
     score = c(72, 65, 43, 38, 91)
 )
+
 ```
 
 - [ ] Using `if_else`, add a new column `result` to `students` that is `"pass"` when the score is at least 40 and `"fail"` otherwise.
@@ -192,7 +193,7 @@ stopifnot(
 
 ### Part (b): Loops
 
-- [ ] In the next block, write a function that uses a for loop to print a message if an input vector contains NA values. Test it on the five variables supplied below.
+- [X] In the next block, write a function that uses a for loop to print a message if an input vector contains NA values. Test it on the five variables supplied below.
 
 ```{r}
 vec1 <- 1:10
@@ -200,11 +201,30 @@ vec2 <- c(1,2,NA,4)
 vec3 <- c()
 vec4 <- "This is not a vector"
 vec5 <- matrix(c(1,2,3,4,NA,6), nrow=2, ncol=3)
+
+vectorCheck <- function(vect) {
+  for (i in vect) {
+    if (is.na(i)) {
+      print("There is an NA variable")
+    }
+  }
+}
 ```
 
 - [ ] In a new chunk, write a function called `make_square` that, given an integer, will print a square of full stops with side length that integer. Here are some examples:
 
-```r
+```{r}
+make_square <- function(n) {
+  for (i in 1:n) {
+    if (i == 1 || i == n) {
+      print(paste(rep(".", n), collapse = ""))
+    } else {
+      print(paste0(".", paste(rep(" ", n - 2), collapse = ""), "."))
+    }
+  }
+}
+make_square(5)
+```
 make_square(3)
 
 # expected output:
